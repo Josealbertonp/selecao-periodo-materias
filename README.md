@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# 🎓 Sistema de Seleção de Período e Matérias
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um sistema web moderno e responsivo para visualização e seleção de matérias por semestre acadêmico, com funcionalidades avançadas de cálculo de pré-requisitos e planejamento curricular.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.16.0-0055FF?style=for-the-badge&logo=framer)
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+### 🎯 **Seleção Inteligente de Semestres**
+- Interface intuitiva para seleção de períodos acadêmicos
+- Visualização clara das matérias por semestre
+- Navegação fluida entre diferentes períodos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📚 **Gestão Completa de Matérias**
+- **Informações detalhadas**: Código, nome, carga horária e descrição
+- **Detalhes expandidos**: Professor, horário, sala e pré-requisitos
+- **Modal interativo**: Visualização completa com animações suaves
+- **Sistema de conclusão**: Marcação de matérias concluídas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔍 **Sistema de Pesquisa**
+- Busca em tempo real por nome, código ou descrição
+- Filtros instantâneos para localização rápida
+- Interface otimizada para mobile e desktop
 
-### `npm test`
+### 🧮 **Calculadora de Matérias Possíveis**
+- Algoritmo inteligente de cálculo de pré-requisitos
+- Visualização de matérias elegíveis para os próximos semestres
+- Badges visuais indicando o semestre de cada matéria
+- Validação automática de dependências
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📱 **Design Responsivo**
+- **Mobile-first**: Otimizado para todos os tamanhos de tela
+- **Animações fluidas**: Transições suaves com Framer Motion
+- **Interface moderna**: Design limpo e profissional
+- **Acessibilidade**: Contraste e usabilidade aprimorados
 
-### `npm run build`
+## 🚀 Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 18.2.0** - Biblioteca principal para interface
+- **Tailwind CSS 3.3.0** - Framework de estilização
+- **Framer Motion 10.16.0** - Animações e transições
+- **Create React App** - Configuração e build automatizado
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎮 Como Usar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. **Seleção de Semestre**
+- Clique nos botões de período (1º ao 5º semestre)
+- Visualize as matérias disponíveis para o período selecionado
 
-### `npm run eject`
+### 2. **Exploração de Matérias**
+- Use a barra de pesquisa para filtrar matérias
+- Clique em "Ver detalhes" para informações completas
+- Marque matérias como concluídas usando o botão "Concluído"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. **Cálculo de Possibilidades**
+- Após marcar matérias concluídas, clique em "Calcular possíveis matérias"
+- Visualize as matérias elegíveis para os próximos semestres
+- Observe os badges de semestre para planejamento
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏗️ Estrutura do Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+src/
+├── App.js              # Componente principal
+├── App.css             # Estilos globais
+├── index.js            # Ponto de entrada
+└── index.css           # Estilos base
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📊 Dados das Matérias
 
-## Learn More
+O sistema inclui um conjunto completo de matérias organizadas por semestre:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **1º Semestre**: Cálculo I, Física Geral I, Introdução à Programação
+- **2º Semestre**: Cálculo II, Estruturas de Dados
+- **3º Semestre**: Física Geral II, Banco de Dados
+- **4º Semestre**: Sistemas Operacionais, Redes de Computadores, Engenharia de Software
+- **5º Semestre**: Inteligência Artificial, Segurança da Informação, Projeto Integrador
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Cada matéria contém:
+- Informações básicas (código, nome, carga horária)
+- Descrição detalhada do conteúdo
+- Dados do professor e horário
+- Pré-requisitos para cursar a disciplina
 
-### Code Splitting
+## 🎨 Personalização
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Adicionando Novas Matérias
+Edite o objeto `MATERIAS_POR_PERIODO` em `App.js`:
 
-### Analyzing the Bundle Size
+```javascript
+const MATERIAS_POR_PERIODO = {
+  "1s": [
+    {
+      codigo: "NOV101",
+      nome: "Nova Matéria",
+      descricao: "Descrição resumida",
+      descricaoDetalhada: "Descrição completa...",
+      carga: "60h",
+      prereq: ["MAT101"],
+      professor: "Prof. Dr. Nome",
+      horario: "Segunda, 14h-16h",
+      sala: "A201"
+    }
+  ]
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Modificando Períodos
+Ajuste o array `PERIODOS` para alterar os períodos disponíveis:
 
-### Making a Progressive Web App
+```javascript
+const PERIODOS = [
+  { id: "1s", label: "1º Semestre" },
+  { id: "2s", label: "2º Semestre" },
+  // Adicione mais períodos conforme necessário
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 Scripts Disponíveis
 
-### Advanced Configuration
+- `npm start` - Executa a aplicação em modo de desenvolvimento
+- `npm test` - Executa os testes automatizados
+- `npm run build` - Gera build de produção
+- `npm run eject` - Ejetar configurações (irreversível)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📱 Responsividade
 
-### Deployment
+A aplicação foi desenvolvida com abordagem mobile-first:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Mobile**: Layout otimizado para telas pequenas
+- **Tablet**: Adaptação para telas médias
+- **Desktop**: Experiência completa em telas grandes
 
-### `npm run build` fails to minify
+## 🔧 Desenvolvimento
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Estrutura de Componentes
+- **Componente Principal**: `SelecaoPeriodoMaterias`
+- **Estado Gerenciado**: React Hooks (useState)
+- **Animações**: Framer Motion para transições suaves
+- **Estilização**: Tailwind CSS com classes utilitárias
+
+### Padrões de Código
+- **ES6+**: Sintaxe moderna do JavaScript
+- **Componentes Funcionais**: Uso de hooks do React
+- **Props e Estado**: Gerenciamento eficiente de dados
+- **Event Handlers**: Manipulação de eventos otimizada
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 👨‍💻 Autor
+
+Desenvolvido com ❤️ para facilitar o planejamento acadêmico.
+
+---
+
+**Versão**: 1.0.0  
+**Última atualização**: 2024
+
+> 💡 **Dica**: Use o sistema para planejar seu curso de forma inteligente, considerando os pré-requisitos e sua progressão acadêmica!
