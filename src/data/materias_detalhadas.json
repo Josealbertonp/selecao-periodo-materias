@@ -1,0 +1,719 @@
+[
+  {
+    "nome": "Pré-Cálculo",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Cálculo Diferencial e Integral 1"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Geometria Analítica",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Física 1",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Física 2"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Fundamentos da Engenharia Eletrônica",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Introdução a Algoritmos e Programação",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Programação Estruturada"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Introdução a Projetos",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Projetos Eletrônicos 1"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Desafio Interdisciplinar",
+    "periodo": 1,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 1",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Pré-Cálculo"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Álgebra Linear",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Física 2",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Física 3"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Física 1",
+      "Análise de Circuitos Elétricos 1"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Tópicos em Química",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Programação Estruturada",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Estrutura de Dados",
+      "Programação Orientada a Objetos"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Introdução a Algoritmos e Programação"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Circuitos Digitais Combinacionais",
+    "periodo": 2,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Circuitos Digitais Sequenciais"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 2",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Cálculo Diferencial e Integral 3"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Cálculo Diferencial e Integral 1",
+      "Amplificadores",
+      "Filtragem Analógica",
+      "Processamento Digital de Sinais 1"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Física 3",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Física 2",
+      "Análise de Circuitos Elétricos 2"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Estrutura de Dados",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Programação Orientada a Objetos"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Programação Estruturada"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Circuitos Digitais Sequenciais",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Circuitos Digitais Combinacionais"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Análise de Circuitos Elétricos 1",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Física 2"
+    ],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Dispositivos Eletrônicos",
+    "periodo": 3,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Dispositivos Eletrônicos de Potência",
+      "Circuitos Eletrônicos"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 3",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Cálculo Diferencial e Integral 2",
+      "Eletromagnetismo"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Fundamentos de Mecânica dos Corpos Rígidos",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Fundamentos de Fenômenos de Transporte",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Microcontroladores 1",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Microcontroladores 2"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Introdução a Redes de Computadores",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Análise de Circuitos Elétricos 2",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Física 3"
+    ],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Circuitos Eletrônicos",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Amplificadores",
+      "Filtragem Analógica"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Dispositivos Eletrônicos"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Dispositivos Eletrônicos de Potência",
+    "periodo": 4,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Dispositivos Eletrônicos"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Microcontroladores 2",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Microcontroladores 1"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Eletromagnetismo",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 3"
+    ],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Amplificadores",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "requeridaPor": [
+      "Circuitos Eletrônicos"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Filtragem Analógica",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "requeridaPor": [
+      "Circuitos Eletrônicos"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Sensores e Atuadores",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Modelagem de Sistemas Físicos",
+    "periodo": 5,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Programação Orientada a Objetos",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Programação Estruturada",
+      "Estrutura de Dados"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Processamento Digital de Sinais 1",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Eletrônica de Potência",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Máquinas Elétricas",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Fundamentos de Controle Clássico",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Técnicas de Controle Digital",
+      "Controle Inteligente"
+    ],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Projetos Eletrônicos 1",
+    "periodo": 6,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Projetos Eletrônicos 2"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Introdução a Projetos"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Técnicas de Controle Digital",
+    "periodo": 7,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Fundamentos de Controle Clássico"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Controle Inteligente",
+    "periodo": 7,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Fundamentos de Controle Clássico"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Trilha",
+    "periodo": 7,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Optativa de Extensão",
+    "periodo": 7,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Empreendedorismo",
+    "periodo": 7,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Telecomunicações",
+    "periodo": 8,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Projeto de Circuitos Integrados",
+    "periodo": 8,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Trilha",
+    "periodo": 8,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Projetos Eletrônicos 2",
+    "periodo": 8,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [
+      "Projetos Eletrônicos 3"
+    ],
+    "requer": [],
+    "requeridaPor": [
+      "Projetos Eletrônicos 1"
+    ],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Engenharia de Sistemas Eletrônicos",
+    "periodo": 9,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Sustentabilidade Ambiental",
+    "periodo": 9,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Optativa Colégio de Humanidades",
+    "periodo": 9,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [],
+    "temasEstudo": []
+  },
+  {
+    "nome": "Projetos Eletrônicos 3",
+    "periodo": 9,
+    "ementa": null,
+    "preRequisito": null,
+    "competencia": null,
+    "trilha": null,
+    "prepara": [],
+    "requer": [],
+    "requeridaPor": [
+      "Projetos Eletrônicos 2"
+    ],
+    "temasEstudo": []
+  }
+]

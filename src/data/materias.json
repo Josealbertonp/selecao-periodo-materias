@@ -1,0 +1,610 @@
+[
+  {
+    "nome": "Pré-Cálculo",
+    "periodo": 1,
+    "ementa": "Pré-Cálculo, ofertada aos estudantes do 1º período do curso de Engenharia Eletrônica, aborda fundamentos básicos da matemática em problemas estruturados envolvendo contexto de engenharia. Nela, os estudantes aprendem a interpretar e delimitar problemas, descritos por números reais, expressões algébricas, equações e inequações, identificando as variáveis e as condições de contorno. Ao final da disciplina, é capaz de resolver problemas descritos por funções de uma variável real, elaborando hipóteses plausíveis aos problemas delimitados.",
+    "preRequisito": null,
+    "prepara": [
+      "Cálculo Diferencial e Integral 1"
+    ],
+    "requer": [],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Geometria Analítica",
+    "periodo": 1,
+    "ementa": "Geometria Analítica, ofertada aos estudantes do 1º período do curso de Engenharia Eletrônica, trata do estudo analítico de vetores e objetos geométricos. Nela, os estudantes aprendem a descrever vetores, retas, planos, cônicas e quádricas de forma algébrica e geométrica. Ao final da disciplina, os estudantes são capazes de representar objetos geométricos de forma algébrica, bem como resolver problemas de engenharia utilizando conceitos e propriedades de álgebra vetorial.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Física 1",
+    "periodo": 1,
+    "ementa": "Física 1, ofertada aos estudantes do 1º período do curso de Engenharia Eletrônica, aborda conceitos e aplicações das leis fundamentais da mecânica no contexto das engenharias. Nela, os estudantes aprendem os diferentes tipos de movimento e suas leis de conservação. Ao final da disciplina, é capaz de interpretar, delimitar, elaborar hipóteses plausíveis, bem como resolver problemas estruturados envolvendo os diferentes tipos de movimento e suas leis de conservação, relacionando-os com medidas experimentais no contexto das engenharias, com autonomia, dedicação e integridade.",
+    "preRequisito": null,
+    "prepara": [
+      "Física 2"
+    ],
+    "requer": [],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Fundamentos da Engenharia Eletrônica",
+    "periodo": 1,
+    "ementa": "A disciplina Fundamentos de Engenharia Eletrônica é destinada a discentes cursando a partir do 1º Período e introduz temas básicos em engenharia e eletrônica. Nela os discentes aprendem sobre métodos científicos na Engenharia, materiais elétricos, medidas elétricas e instrumentação, assim como padrões metrológicos, métodos estatísticos aplicados às medições, e por fim apresenta a legislação vigente que regula a atuação do Engenheiro Eletrônico. Ao final da disciplina, o discente será capaz de conhecer e trabalhar com diferentes materiais elétricos e instrumentos de medidas fazendo o tratamento de dados obtidos através destes.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Introdução a Algoritmos e Programação",
+    "periodo": 1,
+    "ementa": "Disciplina introdutória de programação focada em algoritmos e implementação de hardware.",
+    "preRequisito": null,
+    "prepara": [
+      "Programação Estruturada"
+    ],
+    "requer": [],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Introdução a Projetos",
+    "periodo": 1,
+    "ementa": "Introdução a Projetos apresenta, ao aluno, o engenheiro como um Gerente de Projetos, dando ênfase às principais etapas de gestão de um projeto e a comunicação eficiente. Esta comunicação é desenvolvida em três grandes eixos, comunicação escrita, oral e gráfica; esta última apresenta noções de desenho universal e enfatiza o desenho técnico e o desenho industrial de placas de circuitos eletrônicos.",
+    "preRequisito": null,
+    "prepara": [
+      "Projetos Eletrônicos 1"
+    ],
+    "requer": [],
+    "trilha": "Interdisciplinar"
+  },
+  {
+    "nome": "Desafio Interdisciplinar",
+    "periodo": 1,
+    "ementa": "Disciplina que ambienta o estudante em integração de conhecimentos, articulando as habilidades e competências desenvolvidas a partir do Primeiro Período por meio de um projeto prático norteado por um contexto em Engenharia.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Interdisciplinar"
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 1",
+    "periodo": 2,
+    "ementa": "Cálculo Diferencial e Integral 1, ofertada aos estudantes do 2º período do curso de Engenharia Eletrônica, aborda aplicações de limites, derivadas e integrais de funções reais de uma variável real, em contextos das engenharias. Nela, os estudantes aprendem a interpretar e delimitar problemas, descritos por limites, derivadas e integrais, identificando as variáveis e as condições de contorno. Ao final da disciplina, é capaz de resolver problemas estruturados em diversos contextos da engenharia, analisando comportamentos e taxas de variação de funções, conforme variáveis, condições de contorno e hipóteses elaboradas, com autorregulação.",
+    "preRequisito": "Pré-Cálculo",
+    "prepara": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "requer": [
+      "Pré-Cálculo"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Álgebra Linear",
+    "periodo": 2,
+    "ementa": "Álgebra Linear, ofertada aos estudantes do 2º período do curso de Engenharia Eletrônica, trata dos fundamentos da Álgebra Linear. Nela, os estudantes aprendem sobre matrizes, sistemas de equações lineares, espaços vetoriais, transformações lineares e autovalores e autovetores. Ao final da disciplina, os estudantes são capazes de avaliar a dependência e independência linear entre elementos de um espaço vetorial, obter e analisar dilatações, contrações, reflexões, cisalhamentos e projeções de objetos bidimensionais e tridimensionais.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Física 2",
+    "periodo": 2,
+    "ementa": "Disciplina que aborda conceitos de eletricidade, magnetismo e ondas.",
+    "preRequisito": "Física 1",
+    "prepara": [
+      "Física 3"
+    ],
+    "requer": [
+      "Física 1"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Tópicos em Química",
+    "periodo": 2,
+    "ementa": "Disciplina introdutória aos conceitos fundamentais de química aplicada à engenharia.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Programação Estruturada",
+    "periodo": 2,
+    "ementa": "Disciplina que aprofunda os conceitos de programação estruturada e desenvolvimento de algoritmos.",
+    "preRequisito": "Introdução a Algoritmos e Programação",
+    "prepara": [
+      "Estrutura de Dados"
+    ],
+    "requer": [
+      "Introdução a Algoritmos e Programação"
+    ],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Circuitos Digitais Combinacionais",
+    "periodo": 2,
+    "ementa": "Disciplina que aborda os fundamentos de circuitos digitais combinacionais.",
+    "preRequisito": null,
+    "prepara": [
+      "Circuitos Digitais Sequenciais"
+    ],
+    "requer": [],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 2",
+    "periodo": 3,
+    "ementa": "Continuação do Cálculo Diferencial e Integral 1, abordando técnicas avançadas de integração e aplicações.",
+    "preRequisito": "Cálculo Diferencial e Integral 1",
+    "prepara": [
+      "Cálculo Diferencial e Integral 3"
+    ],
+    "requer": [
+      "Cálculo Diferencial e Integral 1"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Física 3",
+    "periodo": 3,
+    "ementa": "Continuação de Física 2, abordando temas avançados de física.",
+    "preRequisito": "Física 2",
+    "prepara": [],
+    "requer": [
+      "Física 2"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Estrutura de Dados",
+    "periodo": 3,
+    "ementa": "Disciplina que estuda as principais estruturas de dados e algoritmos de manipulação.",
+    "preRequisito": "Programação Estruturada",
+    "prepara": [
+      "Programação Orientada a Objetos"
+    ],
+    "requer": [
+      "Programação Estruturada"
+    ],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Circuitos Digitais Sequenciais",
+    "periodo": 3,
+    "ementa": "Disciplina que aborda circuitos digitais sequenciais e sistemas de memória.",
+    "preRequisito": "Circuitos Digitais Combinacionais",
+    "prepara": [],
+    "requer": [
+      "Circuitos Digitais Combinacionais"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Análise de Circuitos Elétricos 1",
+    "periodo": 3,
+    "ementa": "A disciplina de Análise de Circuitos Elétricos 1 é destinada a discentes a partir do 3º período e aborda as principais técnicas de análise de circuitos de corrente contínua. Nesta o aluno aprenderá a utilizar componentes passivos básicos como resistores, capacitores e indutores, e as leis e os teoremas de circuitos para realizar a análise de circuitos de corrente contínua. O discente aprenderá ainda, a análise de transitórios em circuitos de corrente contínua com resistores, capacitores e indutores (RC, RL e RLC). Ao final da disciplina o discente estará em condições de analisar circuitos elétricos passivos de corrente contínua, puramente resistivos e usando resistores, capacitores e/ou indutores em aplicações do mundo real e usar método científico na elaboração de relatórios técnicos.",
+    "preRequisito": null,
+    "prepara": [
+      "Análise de Circuitos Elétricos 2"
+    ],
+    "requer": [
+      "Cálculo Diferencial e Integral 1",
+      "Física 2"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Dispositivos Eletrônicos",
+    "periodo": 3,
+    "ementa": "Disciplina que aborda os fundamentos dos dispositivos eletrônicos e semicondutores.",
+    "preRequisito": null,
+    "prepara": [
+      "Dispositivos Eletrônicos de Potência",
+      "Circuitos Eletrônicos"
+    ],
+    "requer": [],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Cálculo Diferencial e Integral 3",
+    "periodo": 4,
+    "ementa": "Continuação do Cálculo Diferencial e Integral 2, abordando funções de múltiplas variáveis e aplicações avançadas.",
+    "preRequisito": "Cálculo Diferencial e Integral 2",
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Fundamentos de Mecânica dos Corpos Rígidos",
+    "periodo": 4,
+    "ementa": "Disciplina que aborda os fundamentos da mecânica dos corpos rígidos.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Fundamentos de Fenômenos de Transporte",
+    "periodo": 4,
+    "ementa": "Disciplina que aborda os fundamentos dos fenômenos de transporte.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Microcontroladores 1",
+    "periodo": 4,
+    "ementa": "Disciplina introdutória sobre microcontroladores e sistemas embarcados.",
+    "preRequisito": null,
+    "prepara": [
+      "Microcontroladores 2"
+    ],
+    "requer": [],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Introdução a Redes de Computadores",
+    "periodo": 4,
+    "ementa": "Disciplina que aborda os fundamentos de redes de computadores.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Análise de Circuitos Elétricos 2",
+    "periodo": 4,
+    "ementa": "A disciplina de Análise de Circuitos Elétricos 2, é destinada a discentes a partir do 4º período e aborda técnicas de análise de circuitos de corrente alternada. Nesta o aluno aprenderá ferramentas matemáticas como Transformada de Laplace, de Fourier e diagramas de Bode, aplicadas à análise de circuitos de corrente alternada (CA) para levantamento da resposta em frequência destes. Além dos circuitos CA monofásicos, os alunos aprendem sobre circuitos polifásicos, transformadores e circuitos ressonantes RC, RL e RLC. Ao final da disciplina o discente estará em condições de realizar a análise e implementação de circuitos CA com confiança segurança, além de dominar o uso de instrumentos de medidas com o propósito de testar esses circuitos.",
+    "preRequisito": "Análise de Circuitos Elétricos 1",
+    "prepara": [],
+    "requer": [
+      "Análise de Circuitos Elétricos 1",
+      "Cálculo Diferencial e Integral 2",
+      "Física 3"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Circuitos Eletrônicos",
+    "periodo": 4,
+    "ementa": "Disciplina que aborda a análise e projeto de circuitos eletrônicos.",
+    "preRequisito": "Dispositivos Eletrônicos",
+    "prepara": [
+      "Amplificadores",
+      "Filtragem Analógica"
+    ],
+    "requer": [
+      "Dispositivos Eletrônicos",
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Dispositivos Eletrônicos de Potência",
+    "periodo": 4,
+    "ementa": "Disciplina que aborda dispositivos eletrônicos aplicados em sistemas de potência.",
+    "preRequisito": "Dispositivos Eletrônicos",
+    "prepara": [],
+    "requer": [
+      "Dispositivos Eletrônicos"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Microcontroladores 2",
+    "periodo": 5,
+    "ementa": "Continuação de Microcontroladores 1, abordando tópicos avançados de sistemas embarcados.",
+    "preRequisito": "Microcontroladores 1",
+    "prepara": [],
+    "requer": [
+      "Microcontroladores 1"
+    ],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Eletromagnetismo",
+    "periodo": 5,
+    "ementa": "Disciplina que aborda os fundamentos do eletromagnetismo e suas aplicações.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 3"
+    ],
+    "trilha": "Matemática e Física"
+  },
+  {
+    "nome": "Amplificadores",
+    "periodo": 5,
+    "ementa": "A disciplina de Amplificadores é destinada a discentes a partir do 5º período e aborda aspectos de amplificação de sinais. Nela o aluno aprende a analisar medidas de ganho, impedância e resposta em frequência, bem como aplicar análise por quadripolos aos circuitos estudados, além de analisar as diversas concepções para amplificação de sinais. Ao final da disciplina é capaz de formular o problema e identificar a solução, realizar a investigação experimental da resposta do circuito, implementar relatório informativo sobre o circuito em questão, além da concepção de hardware aplicado.",
+    "preRequisito": "Circuitos Eletrônicos",
+    "prepara": [],
+    "requer": [
+      "Circuitos Eletrônicos",
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Filtragem Analógica",
+    "periodo": 5,
+    "ementa": "Disciplina que aborda o projeto e análise de filtros analógicos.",
+    "preRequisito": "Circuitos Eletrônicos",
+    "prepara": [],
+    "requer": [
+      "Circuitos Eletrônicos",
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Sensores e Atuadores",
+    "periodo": 5,
+    "ementa": "Disciplina que aborda sensores e atuadores em sistemas eletrônicos.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Modelagem de Sistemas Físicos",
+    "periodo": 5,
+    "ementa": "Disciplina que aborda a modelagem matemática de sistemas físicos.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Programação Orientada a Objetos",
+    "periodo": 6,
+    "ementa": "Disciplina que aborda os conceitos de programação orientada a objetos.",
+    "preRequisito": "Estrutura de Dados",
+    "prepara": [],
+    "requer": [
+      "Estrutura de Dados"
+    ],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Processamento Digital de Sinais 1",
+    "periodo": 6,
+    "ementa": "Disciplina que aborda os fundamentos do processamento digital de sinais.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [
+      "Cálculo Diferencial e Integral 2"
+    ],
+    "trilha": "Computação"
+  },
+  {
+    "nome": "Eletrônica de Potência",
+    "periodo": 6,
+    "ementa": "Disciplina que aborda sistemas de eletrônica de potência e conversores.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Máquinas Elétricas",
+    "periodo": 6,
+    "ementa": "Disciplina que aborda os fundamentos das máquinas elétricas.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Fundamentos de Controle Clássico",
+    "periodo": 6,
+    "ementa": "Disciplina que aborda os fundamentos do controle clássico de sistemas.",
+    "preRequisito": null,
+    "prepara": [
+      "Técnicas de Controle Digital",
+      "Controle Inteligente"
+    ],
+    "requer": [],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Projetos Eletrônicos 1",
+    "periodo": 6,
+    "ementa": "Primeira disciplina da sequência de projetos, integrando conhecimentos técnicos.",
+    "preRequisito": "Introdução a Projetos",
+    "prepara": [
+      "Projetos Eletrônicos 2"
+    ],
+    "requer": [
+      "Introdução a Projetos"
+    ],
+    "trilha": "Interdisciplinar"
+  },
+  {
+    "nome": "Técnicas de Controle Digital",
+    "periodo": 7,
+    "ementa": "Disciplina que aborda técnicas avançadas de controle digital de sistemas.",
+    "preRequisito": "Fundamentos de Controle Clássico",
+    "prepara": [],
+    "requer": [
+      "Fundamentos de Controle Clássico"
+    ],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Controle Inteligente",
+    "periodo": 7,
+    "ementa": "Disciplina que aborda técnicas de controle inteligente e adaptativo.",
+    "preRequisito": "Fundamentos de Controle Clássico",
+    "prepara": [],
+    "requer": [
+      "Fundamentos de Controle Clássico"
+    ],
+    "trilha": "Industrial"
+  },
+  {
+    "nome": "Engenharia Clínica",
+    "periodo": 7,
+    "ementa": "Gestão e manutenção de equipamentos hospitalares, normas e padrões (ANVISA, NBR/IEC), infraestrutura hospitalar (gases medicinais, sistemas de esterilização, segurança), organização do setor de engenharia clínica e gestão de parque tecnológico. Voltada à avaliação, manutenção e gestão de tecnologia em saúde.",
+    "preRequisito": null,
+    "prepara": [
+      "Tecnologias Assistivas"
+    ],
+    "requer": [],
+    "trilha": "Biomédica"
+  },
+  {
+    "nome": "Instrumentação Médica",
+    "periodo": 7,
+    "ementa": "Projeto de instrumentação aplicada à eletrofisiologia; uso de sensores e atuadores biomédicos; aquisição e análise de sinais biomédicos; integração hardware/software; testes, validação e certificação de dispositivos. Ao final, o aluno deve ser capaz de projetar instrumentação para eletrofisiologia.",
+    "preRequisito": null,
+    "prepara": [
+      "Tecnologias Assistivas",
+      "Imagens Médicas"
+    ],
+    "requer": [
+      "Sensores e Atuadores",
+      "Processamento Digital de Sinais 1"
+    ],
+    "trilha": "Biomédica"
+  },
+  {
+    "nome": "Trilha",
+    "periodo": 7,
+    "ementa": "Disciplina da trilha de aprofundamento escolhida pelo aluno no 7º período. As trilhas disponíveis são: Engenharia de Computação, Engenharia Industrial e Engenharia Biomédica.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Trilha de Aprofundamento"
+  },
+  {
+    "nome": "Optativa de Extensão",
+    "periodo": 7,
+    "ementa": "Disciplina optativa de extensão que integra conhecimentos técnicos com atividades extensionistas.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Empreendedorismo",
+    "periodo": 7,
+    "ementa": "Disciplina que aborda fundamentos de empreendedorismo e inovação.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Interdisciplinar"
+  },
+  {
+    "nome": "Imagens Médicas",
+    "periodo": 8,
+    "ementa": "Métodos de imagem (Raio-X, TC, RM, cintilografia, ultrassom); processamento digital de imagens; reconstrução de imagens médicas; conceitos de DICOM e PACS; avaliação de qualidade e interpretação. Foco em avaliação e processamento de imagens médicas.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [
+      "Processamento Digital de Sinais 1",
+      "Instrumentação Médica",
+      "Engenharia Clínica"
+    ],
+    "trilha": "Biomédica"
+  },
+  {
+    "nome": "Tecnologias Assistivas",
+    "periodo": 8,
+    "ementa": "Projeto de soluções assistivas (ex.: dispositivos de audiologia), normas técnicas, processo de projeto, teste, verificação, validação e certificação. Enfoca aplicações práticas para pessoas com deficiência (cadeiras, próteses, aparelhos auditivos etc.).",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [
+      "Instrumentação Médica",
+      "Engenharia Clínica"
+    ],
+    "trilha": "Biomédica"
+  },
+  {
+    "nome": "Telecomunicações",
+    "periodo": 8,
+    "ementa": "Disciplina que aborda os fundamentos de telecomunicações e sistemas de comunicação.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Projeto de Circuitos Integrados",
+    "periodo": 8,
+    "ementa": "Disciplina que aborda o projeto e desenvolvimento de circuitos integrados.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Eletrônica"
+  },
+  {
+    "nome": "Trilha",
+    "periodo": 8,
+    "ementa": "Continuação da trilha de aprofundamento escolhida no 7º período.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": "Trilha de Aprofundamento"
+  },
+  {
+    "nome": "Projetos Eletrônicos 2",
+    "periodo": 8,
+    "ementa": "Segunda disciplina da sequência de projetos, com maior complexidade técnica.",
+    "preRequisito": "Projetos Eletrônicos 1",
+    "prepara": [
+      "Projetos Eletrônicos 3"
+    ],
+    "requer": [
+      "Projetos Eletrônicos 1"
+    ],
+    "trilha": "Interdisciplinar"
+  },
+  {
+    "nome": "Engenharia de Sistemas Eletrônicos",
+    "periodo": 9,
+    "ementa": "Disciplina que integra conhecimentos de sistemas eletrônicos complexos.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Sustentabilidade Ambiental",
+    "periodo": 9,
+    "ementa": "Disciplina que aborda questões de sustentabilidade ambiental em projetos de engenharia.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Optativa Colégio de Humanidades",
+    "periodo": 9,
+    "ementa": "Disciplina optativa do Colégio de Humanidades, com temas de formação humanística.",
+    "preRequisito": null,
+    "prepara": [],
+    "requer": [],
+    "trilha": null
+  },
+  {
+    "nome": "Projetos Eletrônicos 3",
+    "periodo": 9,
+    "ementa": "Terceira e última disciplina da sequência de projetos, com complexidade máxima e integração completa dos conhecimentos do curso.",
+    "preRequisito": "Projetos Eletrônicos 2",
+    "prepara": [],
+    "requer": [
+      "Projetos Eletrônicos 2"
+    ],
+    "trilha": "Interdisciplinar"
+  }
+]
