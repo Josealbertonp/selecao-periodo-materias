@@ -9,15 +9,17 @@ Um sistema web moderno e responsivo para visualização e seleção de matérias
 ## ✨ Funcionalidades
 
 ### 🎯 **Seleção Inteligente de Semestres**
-- Interface intuitiva para seleção de períodos acadêmicos
+- Interface intuitiva para seleção de períodos acadêmicos (1º ao 9º período)
 - Visualização clara das matérias por semestre
 - Navegação fluida entre diferentes períodos
+- Layout responsivo com grid adaptativo
 
 ### 📚 **Gestão Completa de Matérias**
-- **Informações detalhadas**: Código, nome, carga horária e descrição
-- **Detalhes expandidos**: Professor, horário, sala e pré-requisitos
+- **Informações detalhadas**: Código, nome, carga horária total e horas semanais
+- **Detalhes expandidos**: Ementa, pré-requisitos, trilhas e relacionamentos
 - **Modal interativo**: Visualização completa com animações suaves
-- **Sistema de conclusão**: Marcação de matérias concluídas
+- **Sistema de conclusão**: Marcação de matérias concluídas por período
+- **Desmarcar em lote**: Botão para desmarcar todas as matérias do período selecionado
 
 ### 🔍 **Sistema de Pesquisa**
 - Busca em tempo real por nome, código ou descrição
@@ -26,38 +28,57 @@ Um sistema web moderno e responsivo para visualização e seleção de matérias
 
 ### 🧮 **Calculadora de Matérias Possíveis**
 - Algoritmo inteligente de cálculo de pré-requisitos
-- Visualização de matérias elegíveis para os próximos semestres
+- **Modal dedicada**: Visualização focada das matérias possíveis
+- Respeita limite de 40h semanais para planejamento realista
 - Badges visuais indicando o semestre de cada matéria
 - Validação automática de dependências
+- Exibição de horas semanais totais
 
-### 📱 **Design Responsivo**
+### 📱 **Design Responsivo e Moderno**
 - **Mobile-first**: Otimizado para todos os tamanhos de tela
 - **Animações fluidas**: Transições suaves com Framer Motion
-- **Interface moderna**: Design limpo e profissional
+- **Interface moderna**: Design limpo com glassmorphism e gradientes
 - **Acessibilidade**: Contraste e usabilidade aprimorados
+- **Tela inicial interativa**: Componentes eletrônicos animados (Arduino, LEDs, osciloscópio)
+- **Fluxograma visual**: Visualização interativa das dependências entre matérias
 
 ## 🚀 Tecnologias Utilizadas
 
-- **React 18.2.0** - Biblioteca principal para interface
+- **React 19.1.1** - Biblioteca principal para interface
+- **React Router DOM 7.9.5** - Roteamento e navegação
 - **Tailwind CSS 3.3.0** - Framework de estilização
-- **Framer Motion 10.16.0** - Animações e transições
+- **Framer Motion 12.23.13** - Animações e transições
+- **React Flow (@xyflow/react) 12.9.2** - Visualização de fluxogramas
 - **Create React App** - Configuração e build automatizado
 
 ## 🎮 Como Usar
 
-### 1. **Seleção de Semestre**
-- Clique nos botões de período (1º ao 5º semestre)
-- Visualize as matérias disponíveis para o período selecionado
+### 1. **Tela Inicial**
+- Visualize informações sobre o curso de Engenharia Eletrônica
+- Explore componentes eletrônicos interativos
+- Acesse o Instagram através do QR Code na modal
+- Clique em "Ver Matérias" para começar
 
-### 2. **Exploração de Matérias**
+### 2. **Seleção de Semestre**
+- Clique nos botões de período (1º ao 9º período)
+- Visualize as matérias disponíveis para o período selecionado
 - Use a barra de pesquisa para filtrar matérias
+
+### 3. **Exploração de Matérias**
 - Clique em "Ver detalhes" para informações completas
 - Marque matérias como concluídas usando o botão "Concluído"
+- Use o botão "Desmarcar todas" para limpar as seleções do período
 
-### 3. **Cálculo de Possibilidades**
+### 4. **Cálculo de Possibilidades**
 - Após marcar matérias concluídas, clique em "Calcular possíveis matérias"
-- Visualize as matérias elegíveis para os próximos semestres
-- Observe os badges de semestre para planejamento
+- Uma modal será aberta mostrando as matérias elegíveis
+- Visualize o total de horas semanais e quantidade de matérias
+- O sistema respeita o limite de 40h semanais automaticamente
+
+### 5. **Fluxograma**
+- Clique em "Ver Fluxograma" para visualizar todas as matérias e suas conexões
+- Filtre por trilha para ver matérias específicas
+- Clique em matérias para ver detalhes
 
 ## 🏗️ Estrutura do Projeto
 
@@ -71,19 +92,19 @@ src/
 
 ## 📊 Dados das Matérias
 
-O sistema inclui um conjunto completo de matérias organizadas por semestre:
+O sistema inclui um conjunto completo de matérias do curso de Engenharia Eletrônica organizadas por período:
 
-- **1º Semestre**: Cálculo I, Física Geral I, Introdução à Programação
-- **2º Semestre**: Cálculo II, Estruturas de Dados
-- **3º Semestre**: Física Geral II, Banco de Dados
-- **4º Semestre**: Sistemas Operacionais, Redes de Computadores, Engenharia de Software
-- **5º Semestre**: Inteligência Artificial, Segurança da Informação, Projeto Integrador
+- **1º ao 9º Período**: Cobertura completa do curso
+- **Trilhas de aprofundamento**: Matemática e Física, Computação, Eletrônica, Industrial, Biomédica, Interdisciplinar
+- **Carga horária total**: 3600h
 
 Cada matéria contém:
-- Informações básicas (código, nome, carga horária)
-- Descrição detalhada do conteúdo
-- Dados do professor e horário
-- Pré-requisitos para cursar a disciplina
+- Informações básicas (código, nome, carga horária total)
+- Horas semanais para cálculo de carga de trabalho
+- Descrição detalhada (ementa)
+- Pré-requisitos obrigatórios e recomendados
+- Trilha de aprofundamento
+- Relacionamentos (prepara outras matérias, requer conhecimentos)
 
 ## 🎨 Personalização
 
@@ -159,6 +180,6 @@ Desenvolvido com ❤️ para facilitar o planejamento acadêmico.
 ---
 
 **Versão**: 1.0.0  
-**Última atualização**: 2024
+**Última atualização**: 2025
 
 > 💡 **Dica**: Use o sistema para planejar seu curso de forma inteligente, considerando os pré-requisitos e sua progressão acadêmica!
