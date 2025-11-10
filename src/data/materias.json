@@ -8,7 +8,9 @@
       "Cálculo Diferencial e Integral 1"
     ],
     "requer": [],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 45,
+    "horasSemanais": 2.5
   },
   {
     "nome": "Geometria Analítica",
@@ -17,7 +19,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 45,
+    "horasSemanais": 2.5
   },
   {
     "nome": "Física 1",
@@ -28,7 +32,9 @@
       "Física 2"
     ],
     "requer": [],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 75,
+    "horasSemanais": 4.2
   },
   {
     "nome": "Fundamentos da Engenharia Eletrônica",
@@ -37,7 +43,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 45,
+    "horasSemanais": 2.5
   },
   {
     "nome": "Introdução a Algoritmos e Programação",
@@ -48,7 +56,9 @@
       "Programação Estruturada"
     ],
     "requer": [],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 45,
+    "horasSemanais": 2.5
   },
   {
     "nome": "Introdução a Projetos",
@@ -59,7 +69,9 @@
       "Projetos Eletrônicos 1"
     ],
     "requer": [],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 90,
+    "horasSemanais": 5
   },
   {
     "nome": "Desafio Interdisciplinar",
@@ -68,7 +80,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 15,
+    "horasSemanais": 1.3
   },
   {
     "nome": "Cálculo Diferencial e Integral 1",
@@ -81,7 +95,9 @@
     "requer": [
       "Pré-Cálculo"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Álgebra Linear",
@@ -90,7 +106,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Física 2",
@@ -103,7 +121,9 @@
     "requer": [
       "Física 1"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 75,
+    "horasSemanais": 4.2
   },
   {
     "nome": "Tópicos em Química",
@@ -112,7 +132,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Programação Estruturada",
@@ -125,7 +147,9 @@
     "requer": [
       "Introdução a Algoritmos e Programação"
     ],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Circuitos Digitais Combinacionais",
@@ -136,7 +160,9 @@
       "Circuitos Digitais Sequenciais"
     ],
     "requer": [],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 45,
+    "horasSemanais": 2.5
   },
   {
     "nome": "Cálculo Diferencial e Integral 2",
@@ -149,7 +175,9 @@
     "requer": [
       "Cálculo Diferencial e Integral 1"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Física 3",
@@ -160,7 +188,9 @@
     "requer": [
       "Física 2"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Estrutura de Dados",
@@ -173,7 +203,9 @@
     "requer": [
       "Programação Estruturada"
     ],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Circuitos Digitais Sequenciais",
@@ -184,7 +216,9 @@
     "requer": [
       "Circuitos Digitais Combinacionais"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Análise de Circuitos Elétricos 1",
@@ -198,7 +232,9 @@
       "Cálculo Diferencial e Integral 1",
       "Física 2"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Dispositivos Eletrônicos",
@@ -210,7 +246,9 @@
       "Circuitos Eletrônicos"
     ],
     "requer": [],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Cálculo Diferencial e Integral 3",
@@ -221,7 +259,9 @@
     "requer": [
       "Cálculo Diferencial e Integral 2"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Fundamentos de Mecânica dos Corpos Rígidos",
@@ -230,7 +270,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Fundamentos de Fenômenos de Transporte",
@@ -239,7 +281,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Microcontroladores 1",
@@ -250,7 +294,9 @@
       "Microcontroladores 2"
     ],
     "requer": [],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Introdução a Redes de Computadores",
@@ -259,7 +305,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Análise de Circuitos Elétricos 2",
@@ -272,7 +320,9 @@
       "Cálculo Diferencial e Integral 2",
       "Física 3"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Circuitos Eletrônicos",
@@ -287,7 +337,9 @@
       "Dispositivos Eletrônicos",
       "Cálculo Diferencial e Integral 2"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Dispositivos Eletrônicos de Potência",
@@ -298,7 +350,9 @@
     "requer": [
       "Dispositivos Eletrônicos"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Microcontroladores 2",
@@ -309,7 +363,9 @@
     "requer": [
       "Microcontroladores 1"
     ],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Eletromagnetismo",
@@ -320,7 +376,9 @@
     "requer": [
       "Cálculo Diferencial e Integral 3"
     ],
-    "trilha": "Matemática e Física"
+    "trilha": "Matemática e Física",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Amplificadores",
@@ -332,7 +390,9 @@
       "Circuitos Eletrônicos",
       "Cálculo Diferencial e Integral 2"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Filtragem Analógica",
@@ -344,7 +404,9 @@
       "Circuitos Eletrônicos",
       "Cálculo Diferencial e Integral 2"
     ],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Sensores e Atuadores",
@@ -353,7 +415,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Modelagem de Sistemas Físicos",
@@ -362,7 +426,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Programação Orientada a Objetos",
@@ -373,7 +439,9 @@
     "requer": [
       "Estrutura de Dados"
     ],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Processamento Digital de Sinais 1",
@@ -384,7 +452,9 @@
     "requer": [
       "Cálculo Diferencial e Integral 2"
     ],
-    "trilha": "Computação"
+    "trilha": "Computação",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Eletrônica de Potência",
@@ -393,7 +463,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Máquinas Elétricas",
@@ -402,7 +474,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Fundamentos de Controle Clássico",
@@ -414,7 +488,9 @@
       "Controle Inteligente"
     ],
     "requer": [],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Projetos Eletrônicos 1",
@@ -427,7 +503,9 @@
     "requer": [
       "Introdução a Projetos"
     ],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Técnicas de Controle Digital",
@@ -438,7 +516,9 @@
     "requer": [
       "Fundamentos de Controle Clássico"
     ],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Controle Inteligente",
@@ -449,7 +529,9 @@
     "requer": [
       "Fundamentos de Controle Clássico"
     ],
-    "trilha": "Industrial"
+    "trilha": "Industrial",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Engenharia Clínica",
@@ -460,7 +542,9 @@
       "Tecnologias Assistivas"
     ],
     "requer": [],
-    "trilha": "Biomédica"
+    "trilha": "Biomédica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Instrumentação Médica",
@@ -475,7 +559,9 @@
       "Sensores e Atuadores",
       "Processamento Digital de Sinais 1"
     ],
-    "trilha": "Biomédica"
+    "trilha": "Biomédica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Trilha",
@@ -484,7 +570,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Trilha de Aprofundamento"
+    "trilha": "Trilha de Aprofundamento",
+    "carga": 120,
+    "horasSemanais": 6.7
   },
   {
     "nome": "Optativa de Extensão",
@@ -493,7 +581,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 90,
+    "horasSemanais": 5
   },
   {
     "nome": "Empreendedorismo",
@@ -502,7 +592,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Imagens Médicas",
@@ -515,7 +607,9 @@
       "Instrumentação Médica",
       "Engenharia Clínica"
     ],
-    "trilha": "Biomédica"
+    "trilha": "Biomédica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Tecnologias Assistivas",
@@ -527,7 +621,9 @@
       "Instrumentação Médica",
       "Engenharia Clínica"
     ],
-    "trilha": "Biomédica"
+    "trilha": "Biomédica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Telecomunicações",
@@ -536,7 +632,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Projeto de Circuitos Integrados",
@@ -545,7 +643,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Eletrônica"
+    "trilha": "Eletrônica",
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Trilha",
@@ -554,7 +654,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": "Trilha de Aprofundamento"
+    "trilha": "Trilha de Aprofundamento",
+    "carga": 120,
+    "horasSemanais": 6.7
   },
   {
     "nome": "Projetos Eletrônicos 2",
@@ -567,7 +669,9 @@
     "requer": [
       "Projetos Eletrônicos 1"
     ],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 120,
+    "horasSemanais": 6.7
   },
   {
     "nome": "Engenharia de Sistemas Eletrônicos",
@@ -576,7 +680,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 60,
+    "horasSemanais": 3.3
   },
   {
     "nome": "Sustentabilidade Ambiental",
@@ -585,7 +691,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 30,
+    "horasSemanais": 1.7
   },
   {
     "nome": "Optativa Colégio de Humanidades",
@@ -594,7 +702,9 @@
     "preRequisito": null,
     "prepara": [],
     "requer": [],
-    "trilha": null
+    "trilha": null,
+    "carga": 90,
+    "horasSemanais": 5
   },
   {
     "nome": "Projetos Eletrônicos 3",
@@ -605,6 +715,8 @@
     "requer": [
       "Projetos Eletrônicos 2"
     ],
-    "trilha": "Interdisciplinar"
+    "trilha": "Interdisciplinar",
+    "carga": 150,
+    "horasSemanais": 8.3
   }
 ]
