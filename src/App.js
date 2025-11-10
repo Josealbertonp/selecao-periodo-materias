@@ -138,62 +138,13 @@ const { materiasPorPeriodo: MATERIAS_POR_PERIODO, todasMaterias: TODAS_MATERIAS 
 // Componente de Tela Inicial
 function TelaInicial() {
   const navigate = useNavigate();
-  const [ledStates, setLedStates] = useState({});
-  const [oscilloscopeValue, setOscilloscopeValue] = useState(0);
-  const [multimeterValue, setMultimeterValue] = useState(0);
   const [mostrarModalInstagram, setMostrarModalInstagram] = useState(false);
 
   const totalMaterias = Object.values(MATERIAS_POR_PERIODO).flat().length;
   const totalPeriodos = PERIODOS.length;
-  const trilhas = [...new Set(Object.values(MATERIAS_POR_PERIODO).flat().map(m => m.trilha).filter(Boolean))];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLedStates(prev => ({
-        led1: Math.random() > 0.5,
-        led2: Math.random() > 0.3,
-        led3: Math.random() > 0.4,
-        led4: Math.random() > 0.6,
-        led5: Math.random() > 0.5,
-        led6: Math.random() > 0.7,
-      }));
-    }, 500);
-
-    const oscInterval = setInterval(() => {
-      setOscilloscopeValue(prev => (prev + 0.1) % (Math.PI * 2));
-    }, 50);
-
-    const multInterval = setInterval(() => {
-      setMultimeterValue(prev => (prev + 0.5) % 100);
-    }, 200);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(oscInterval);
-      clearInterval(multInterval);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-y-auto relative">
-      {/* Background com gradiente animado */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none"
-        animate={{
-          background: [
-            'radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 50%, rgba(34, 197, 94, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 50% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      
       {/* Background animado - Circuitos */}
       <div className="fixed inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 1200 800">
@@ -274,536 +225,15 @@ function TelaInicial() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 py-8 sm:py-12" style={{ pointerEvents: 'auto' }}>
-        {/* Container com layout flexível - Arduino ao lado em telas grandes */}
-        <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mb-6 sm:mb-8">
-          {/* Título principal com animação */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-center lg:text-left lg:flex-1"
-          >
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
-              <motion.span 
-                className="bg-gradient-to-r from-blue-400 via-green-400 to-orange-400 bg-clip-text text-transparent"
-                animate={{
-                  filter: [
-                    'drop-shadow(0 0 10px rgba(59, 130, 246, 0.5))',
-                    'drop-shadow(0 0 20px rgba(34, 197, 94, 0.5))',
-                    'drop-shadow(0 0 10px rgba(59, 130, 246, 0.5))',
-                  ],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                Engenharia
-              </motion.span>
-              <br />
-              <motion.span 
-                className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
-                animate={{
-                  filter: [
-                    'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))',
-                    'drop-shadow(0 0 20px rgba(168, 85, 247, 0.5))',
-                    'drop-shadow(0 0 10px rgba(34, 197, 94, 0.5))',
-                  ],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-              >
-                Eletrônica
-              </motion.span>
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 mt-2 sm:mt-4">
-              Sistema de Seleção de Matérias
-            </p>
-          </motion.div>
-
-          {/* Placa Arduino animada - Réplica Realista (Horizontal) - Interativa - Menor */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="relative flex-shrink-0"
-            style={{ perspective: '1000px', perspectiveOrigin: 'center center' }}
-          >
-          {/* Dica de interatividade */}
-          <motion.div
-            className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-400 text-[10px] sm:text-xs pointer-events-none"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: [0.5, 1, 0.5], y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <span className="flex items-center gap-1">
-              <span>👆</span>
-              <span className="hidden lg:inline">Arraste</span>
-            </span>
-          </motion.div>
-          <motion.div
-            drag
-            dragConstraints={{ left: -150, right: 150, top: -80, bottom: 80 }}
-            dragElastic={0.3}
-            dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-            whileHover={{
-              rotateY: 20,
-              rotateX: -15,
-              scale: 1.08,
-              z: 50,
-              transition: { duration: 0.3, ease: "easeOut" },
-            }}
-            whileDrag={{
-              cursor: 'grabbing',
-              scale: 1.1,
-              rotateZ: 5,
-            }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              rotateY: [0, 3, 0],
-              rotateX: [0, 2, 0],
-            }}
-            transition={{
-              rotateY: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              rotateX: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
-            }}
-            style={{
-              transformStyle: 'preserve-3d',
-              cursor: 'grab',
-            }}
-            className="relative"
-          >
-            <motion.div
-              className="relative bg-gradient-to-br from-green-900 to-green-800 rounded-lg p-2 sm:p-3 shadow-2xl border-2 border-green-700"
-              style={{
-                maxWidth: '380px',
-                width: '100%',
-                margin: '0 auto',
-                minHeight: '180px',
-                transformStyle: 'preserve-3d',
-                backfaceVisibility: 'hidden',
-              }}
-              whileHover={{
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(34, 197, 94, 0.3)',
-              }}
-            >
-            {/* Traçados de PCB - Linhas de cobre */}
-            <svg className="absolute inset-0 w-full h-full opacity-20" style={{ pointerEvents: 'none' }}>
-              <motion.path
-                d="M 40 20 L 140 20 L 140 60 L 240 60"
-                stroke="#fbbf24"
-                strokeWidth="1.5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-              />
-              <motion.path
-                d="M 300 40 L 400 40 L 400 80 L 500 80"
-                stroke="#fbbf24"
-                strokeWidth="1.5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
-              />
-              <motion.path
-                d="M 150 120 L 250 120 L 250 80 L 350 80"
-                stroke="#fbbf24"
-                strokeWidth="1.5"
-                fill="none"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2.2, repeat: Infinity, repeatType: "reverse", delay: 0.6 }}
-              />
-            </svg>
-
-            {/* Header - Título e Logo */}
-            <div className="flex items-center justify-between mb-2 pb-1 border-b border-green-600">
-              <h3 className="text-white font-bold text-xs sm:text-sm tracking-wider">ARDUINO</h3>
-              <div className="text-white text-[10px] sm:text-xs font-semibold">UNO R3</div>
-            </div>
-
-            {/* Área principal da placa - Layout Horizontal */}
-            <div className="relative flex items-center justify-between" style={{ minHeight: '140px' }}>
-              {/* Lado Esquerdo - Conectores */}
-              <div className="flex flex-col items-center gap-2.5 sm:gap-3">
-                {/* Conector USB */}
-                <div className="flex flex-col items-center">
-                  <div className="w-6 h-4 sm:w-7 sm:h-5 bg-gray-800 rounded border-2 border-gray-600 mb-0.5"></div>
-                  <div className="text-gray-300 text-[5px] sm:text-[7px]">USB</div>
-                </div>
-
-                {/* Conector de Alimentação */}
-                <div className="flex flex-col items-center">
-                  <div className="w-5 h-4 sm:w-6 sm:h-5 bg-gray-800 rounded border-2 border-gray-600 mb-0.5"></div>
-                  <div className="text-gray-300 text-[5px] sm:text-[7px]">VIN</div>
-                </div>
-              </div>
-
-              {/* Centro - Microcontrolador e LEDs */}
-              <div className="flex-1 flex flex-col items-center justify-center px-2 sm:px-4">
-                {/* Microcontrolador ATmega328P */}
-                <motion.div
-                  className="bg-gray-800 rounded-lg p-1 sm:p-1.5 shadow-xl border-2 border-gray-700 mb-2"
-                  animate={{ boxShadow: ['0 0 0px rgba(59, 130, 246, 0.5)', '0 0 15px rgba(59, 130, 246, 0.8)', '0 0 0px rgba(59, 130, 246, 0.5)'] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <div className="text-center">
-                    <div className="text-white text-[4px] sm:text-[6px] font-bold mb-0.5">ATmega328P</div>
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-900 rounded border border-gray-600 flex items-center justify-center">
-                      <div className="w-5 h-5 sm:w-7 sm:h-7 bg-gray-700 rounded border-2 border-gray-500 grid grid-cols-4 gap-0.5 p-0.5">
-                        {Array.from({ length: 16 }).map((_, i) => (
-                          <div key={i} className="bg-gray-600 rounded-sm" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* LEDs de Status em linha */}
-                <div className="flex gap-1.5 sm:gap-2 mb-1.5">
-                  {/* LED ON (Power) */}
-                  <motion.div className="flex flex-col items-center">
-                    <motion.div
-                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500 shadow-lg shadow-red-500"
-                      animate={{
-                        opacity: [0.8, 1, 0.8],
-                        scale: [1, 1.2, 1],
-                      }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    />
-                    <div className="text-gray-300 text-[5px] sm:text-[6px] mt-0.5">ON</div>
-                  </motion.div>
-
-                  {/* LED TX */}
-                  <motion.div className="flex flex-col items-center">
-                    <motion.div
-                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400 shadow-lg shadow-blue-400"
-                      animate={{
-                        opacity: ledStates.led2 ? [0.5, 1, 0.5] : 0.3,
-                        scale: ledStates.led2 ? [1, 1.3, 1] : 1,
-                      }}
-                      transition={{ duration: 0.5, repeat: Infinity }}
-                    />
-                    <div className="text-gray-300 text-[5px] sm:text-[6px] mt-0.5">TX</div>
-                  </motion.div>
-
-                  {/* LED RX */}
-                  <motion.div className="flex flex-col items-center">
-                    <motion.div
-                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400 shadow-lg shadow-yellow-400"
-                      animate={{
-                        opacity: ledStates.led3 ? [0.5, 1, 0.5] : 0.3,
-                        scale: ledStates.led3 ? [1, 1.3, 1] : 1,
-                      }}
-                      transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
-                    />
-                    <div className="text-gray-300 text-[5px] sm:text-[6px] mt-0.5">RX</div>
-                  </motion.div>
-
-                  {/* LED L (Built-in) */}
-                  <motion.div className="flex flex-col items-center">
-                    <motion.div
-                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 shadow-lg shadow-green-400"
-                      animate={{
-                        opacity: ledStates.led1 ? [0.5, 1, 0.5] : 0.3,
-                        scale: ledStates.led1 ? [1, 1.3, 1] : 1,
-                      }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
-                    />
-                    <div className="text-gray-300 text-[5px] sm:text-[6px] mt-0.5">L</div>
-                  </motion.div>
-                </div>
-
-                {/* Botão Reset */}
-                <motion.button
-                  className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-600 rounded-full border-2 border-red-700 shadow-lg"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  animate={{
-                    boxShadow: [
-                      '0 0 0px rgba(239, 68, 68, 0.5)',
-                      '0 0 10px rgba(239, 68, 68, 0.8)',
-                      '0 0 0px rgba(239, 68, 68, 0.5)',
-                    ],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-
-                {/* Componentes passivos */}
-                <div className="flex gap-1.5 sm:gap-2 mt-2">
-                  {/* Resistores */}
-                  {[1, 2].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="w-2.5 h-1.5 sm:w-3 sm:h-2 bg-orange-700 rounded border border-orange-600"
-                      animate={{ rotate: [0, 2, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                    />
-                  ))}
-                  {/* Capacitores */}
-                  {[1, 2].map((i) => (
-                    <motion.div
-                      key={i}
-                      className="w-1.5 h-2.5 sm:w-2 sm:h-3 bg-gray-600 rounded"
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Lado Direito - Footer rotacionado */}
-              <div className="flex flex-col items-center justify-center">
-                <div className="text-gray-300 text-[7px] sm:text-[9px] writing-vertical" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-                  Made in Italy
-                </div>
-              </div>
-            </div>
-
-            {/* Pinos - Superior e Inferior - Reduzidos */}
-            <div className="mt-1.5">
-              {/* Pinos Superiores - Digitais */}
-              <div className="flex justify-center gap-0.5 mb-0.5">
-                {['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'].map((label, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex flex-col items-center"
-                    initial={{ y: -5 }}
-                    animate={{ y: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                  >
-                    <motion.div
-                      className="w-1 h-2.5 sm:w-1.5 sm:h-3 bg-yellow-600 rounded-t border border-yellow-500"
-                      animate={{ y: [0, -1, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
-                    />
-                    <div className="text-gray-300 text-[4px] sm:text-[5px] font-mono mt-0.5">{label}</div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Pinos Inferiores - Analógicos */}
-              <div className="flex justify-center gap-0.5">
-                {['GND', 'GND', '5V', '3.3V', 'RST', 'AREF', 'A0', 'A1', 'A2', 'A3', 'A4', 'A5'].map((label, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex flex-col items-center"
-                    initial={{ y: 5 }}
-                    animate={{ y: 0 }}
-                    transition={{ delay: i * 0.03 }}
-                  >
-                    <div className="text-gray-300 text-[4px] sm:text-[5px] font-mono mb-0.5">{label}</div>
-                    <motion.div
-                      className="w-1 h-2.5 sm:w-1.5 sm:h-3 bg-yellow-600 rounded-t border border-yellow-500"
-                      animate={{ y: [0, 1, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-        </div>
-
-        {/* Componentes eletrônicos flutuantes */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-          {/* Resistor */}
-          <motion.div
-            className="absolute top-20 left-10 sm:left-20"
-            animate={{
-              y: [0, -20, 0],
-              rotate: [0, 5, 0],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <div className="w-16 h-8 sm:w-20 sm:h-10 bg-yellow-700 rounded-lg border-2 border-yellow-600 flex items-center justify-center">
-              <div className="w-full h-1 bg-yellow-500" />
-            </div>
-          </motion.div>
-
-          {/* Capacitor */}
-          <motion.div
-            className="absolute top-40 right-10 sm:right-20"
-            animate={{
-              y: [0, 15, 0],
-              rotate: [0, -5, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
-          >
-            <div className="w-6 h-12 sm:w-8 sm:h-16 bg-gray-600 rounded flex flex-col items-center justify-between p-1">
-              <div className="w-full h-1 bg-gray-400" />
-              <div className="w-full h-1 bg-gray-400" />
-            </div>
-          </motion.div>
-
-          {/* Transistor */}
-          <motion.div
-            className="absolute top-60 left-1/3"
-            animate={{
-              x: [0, 15, 0],
-              rotate: [0, -3, 0],
-            }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.8,
-            }}
-          >
-            <div className="w-10 h-14 sm:w-12 sm:h-16 bg-gray-800 rounded border-2 border-gray-600 flex flex-col items-center justify-center p-1">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mb-1"></div>
-              <div className="w-1 h-4 bg-gray-400"></div>
-              <div className="w-2 h-2 bg-red-500 rounded-full mt-1"></div>
-            </div>
-          </motion.div>
-
-          {/* Diodo */}
-          <motion.div
-            className="absolute top-80 right-1/3"
-            animate={{
-              y: [0, -15, 0],
-              rotate: [0, 8, 0],
-            }}
-            transition={{
-              duration: 2.8,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.2,
-            }}
-          >
-            <div className="w-8 h-12 sm:w-10 sm:h-14 bg-gray-700 rounded border-2 border-gray-500 flex items-center justify-center">
-              <div className="w-4 h-1 bg-red-600"></div>
-              <div className="w-1 h-8 bg-gray-400"></div>
-              <div className="w-4 h-1 bg-gray-300"></div>
-            </div>
-          </motion.div>
-
-          {/* Osciloscópio */}
-          <motion.div
-            className="absolute bottom-40 left-10 sm:left-20"
-            animate={{
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <div className="w-24 h-16 sm:w-32 sm:h-20 bg-gray-800 rounded-lg border-2 border-gray-600 p-2">
-              <div className="w-full h-full bg-black rounded border border-gray-700 relative overflow-hidden">
-                {/* Tela do osciloscópio com onda senoidal */}
-                <svg className="w-full h-full" viewBox="0 0 100 60" preserveAspectRatio="none">
-                  <motion.path
-                    d={`M 0 30 ${Array.from({ length: 100 }, (_, i) => {
-                      const x = i;
-                      const y = 30 + Math.sin(oscilloscopeValue + i * 0.1) * 15;
-                      return `L ${x} ${y}`;
-                    }).join(' ')}`}
-                    stroke="#00ff00"
-                    strokeWidth="0.5"
-                    fill="none"
-                  />
-                  {/* Grade */}
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <line key={`h-${i}`} x1="0" y1={i * 15} x2="100" y2={i * 15} stroke="#333" strokeWidth="0.3" />
-                  ))}
-                  {Array.from({ length: 10 }).map((_, i) => (
-                    <line key={`v-${i}`} x1={i * 10} y1="0" x2={i * 10} y2="60" stroke="#333" strokeWidth="0.3" />
-                  ))}
-                </svg>
-              </div>
-              <div className="text-gray-300 text-[6px] sm:text-[8px] mt-1 text-center">OSC</div>
-            </div>
-          </motion.div>
-
-          {/* Multímetro */}
-          <motion.div
-            className="absolute bottom-40 right-10 sm:right-20"
-            animate={{
-              scale: [1, 1.03, 1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
-          >
-            <div className="w-20 h-14 sm:w-28 sm:h-18 bg-yellow-600 rounded-lg border-2 border-yellow-700 p-1.5">
-              <div className="w-full h-full bg-gray-900 rounded border border-gray-700 flex flex-col items-center justify-center">
-                <div className="text-green-400 text-[8px] sm:text-[10px] font-mono font-bold">
-                  {multimeterValue.toFixed(1)}V
-                </div>
-                <div className="text-gray-500 text-[6px] sm:text-[7px] mt-0.5">DC</div>
-              </div>
-              <div className="text-gray-800 text-[6px] sm:text-[8px] mt-0.5 text-center font-semibold">DMM</div>
-            </div>
-          </motion.div>
-
-          {/* Chip IC */}
-          <motion.div
-            className="absolute bottom-32 left-1/4"
-            animate={{
-              x: [0, 10, 0],
-              rotate: [0, 3, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          >
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded border-2 border-gray-600 flex items-center justify-center">
-              <div className="text-white text-xs font-bold">IC</div>
-            </div>
-          </motion.div>
-
-          {/* LED flutuante */}
-          <motion.div
-            className="absolute bottom-20 right-1/4"
-            animate={{
-              y: [0, -30, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.5,
-            }}
-          >
-            <motion.div
-              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-green-400 shadow-lg shadow-green-400"
-              animate={{
-                opacity: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-              }}
-            />
-          </motion.div>
+      <div className="relative z-10 flex flex-col items-center min-h-screen p-4 sm:p-8 py-12 sm:py-16" style={{ pointerEvents: 'auto' }}>
+        {/* Título principal centralizado */}
+        <div className="text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+            Engenharia Eletrônica
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300">
+            Sistema de Seleção de Matérias
+          </p>
         </div>
 
         {/* Seções Informativas */}
@@ -811,7 +241,7 @@ function TelaInicial() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="w-full max-w-5xl mx-auto mb-8 sm:mb-12 relative z-10"
+          className="w-full max-w-5xl mx-auto mb-8 sm:mb-12 relative z-10 mt-8 sm:mt-12"
         >
           {/* Estatísticas do Curso */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -839,7 +269,7 @@ function TelaInicial() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold text-orange-400 mb-1">{trilhas.length}</div>
+              <div className="text-3xl sm:text-4xl font-bold text-orange-400 mb-1">3</div>
               <div className="text-xs sm:text-sm text-gray-300">Trilhas</div>
             </motion.div>
             <motion.div
@@ -853,8 +283,8 @@ function TelaInicial() {
             </motion.div>
           </div>
 
-          {/* Cards de Áreas da Eletrônica */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {/* Cards de Trilhas */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -867,9 +297,9 @@ function TelaInicial() {
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <div className="text-2xl mb-2 relative z-10">🔌</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Circuitos Analógicos</h3>
-              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Projeto e análise de circuitos com componentes passivos e ativos.</p>
+              <div className="text-2xl mb-2 relative z-10">💻</div>
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Engenharia de Computação</h3>
+              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Sistemas computacionais, software e hardware.</p>
             </motion.div>
 
             <motion.div
@@ -884,9 +314,9 @@ function TelaInicial() {
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <div className="text-2xl mb-2 relative z-10">💻</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Sistemas Digitais</h3>
-              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Lógica digital, microcontroladores e sistemas embarcados.</p>
+              <div className="text-2xl mb-2 relative z-10">🏭</div>
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Engenharia Industrial</h3>
+              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Otimização de processos e sistemas produtivos.</p>
             </motion.div>
 
             <motion.div
@@ -896,64 +326,13 @@ function TelaInicial() {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all cursor-pointer group relative overflow-hidden"
               whileHover={{ 
                 scale: 1.05,
-                borderColor: 'rgba(34, 197, 94, 0.5)',
-                boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-500/10 to-green-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <div className="text-2xl mb-2 relative z-10">📡</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Telecomunicações</h3>
-              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Processamento de sinais e sistemas de comunicação.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all cursor-pointer group relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.05,
-                borderColor: 'rgba(251, 191, 36, 0.5)',
-                boxShadow: '0 0 20px rgba(251, 191, 36, 0.3)',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/10 to-yellow-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <div className="text-2xl mb-2 relative z-10">⚡</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Eletrônica de Potência</h3>
-              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Conversores, inversores e sistemas de energia.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all cursor-pointer group relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.05,
-                borderColor: 'rgba(168, 85, 247, 0.5)',
-                boxShadow: '0 0 20px rgba(168, 85, 247, 0.3)',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-purple-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <div className="text-2xl mb-2 relative z-10">🤖</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Automação</h3>
-              <p className="text-gray-300 text-xs sm:text-sm relative z-10">Controle de processos e sistemas automatizados.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1.3 }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all cursor-pointer group relative overflow-hidden"
-              whileHover={{ 
-                scale: 1.05,
                 borderColor: 'rgba(236, 72, 153, 0.5)',
                 boxShadow: '0 0 20px rgba(236, 72, 153, 0.3)',
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-500/10 to-pink-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               <div className="text-2xl mb-2 relative z-10">🏥</div>
-              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Biomédica</h3>
+              <h3 className="text-white font-semibold text-sm sm:text-base mb-1 relative z-10">Engenharia Biomédica</h3>
               <p className="text-gray-300 text-xs sm:text-sm relative z-10">Instrumentação médica e equipamentos de saúde.</p>
             </motion.div>
           </div>
@@ -964,7 +343,7 @@ function TelaInicial() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center relative"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center relative mt-8 sm:mt-12"
           style={{ zIndex: 50, pointerEvents: 'auto' }}
         >
           {/* Botão principal - Entrar nas matérias */}
@@ -1008,40 +387,6 @@ function TelaInicial() {
             </motion.button>
           </div>
         </motion.div>
-
-        {/* Onda de partículas no fundo - Melhorada */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden pointer-events-none z-0">
-          {Array.from({ length: 30 }).map((_, i) => {
-            const colors = ['#3b82f6', '#22c55e', '#f97316', '#a855f7', '#ec4899'];
-            const color = colors[i % colors.length];
-            return (
-              <motion.div
-                key={i}
-                className="absolute rounded-full pointer-events-none"
-                style={{
-                  width: `${2 + Math.random() * 3}px`,
-                  height: `${2 + Math.random() * 3}px`,
-                  left: `${(i * 3.33) % 100}%`,
-                  bottom: `${Math.random() * 30}%`,
-                  backgroundColor: color,
-                  boxShadow: `0 0 ${4 + Math.random() * 4}px ${color}`,
-                }}
-                animate={{
-                  y: [0, -150 - Math.random() * 50, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [0.5, 1.2, 0.5],
-                  x: [0, (Math.random() - 0.5) * 20, 0],
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 3,
-                  repeat: Infinity,
-                  delay: i * 0.15,
-                  ease: "easeInOut",
-                }}
-              />
-            );
-          })}
-        </div>
       </div>
 
       {/* Modal do Instagram com QR Code */}
@@ -1142,6 +487,10 @@ function SelecaoPeriodoMaterias() {
   const [possiveisMaterias, setPossiveisMaterias] = useState([]);
   const [mostrarModalPossiveis, setMostrarModalPossiveis] = useState(false);
   const [query, setQuery] = useState("");
+  const [mostrarConfirmacaoPeriodos, setMostrarConfirmacaoPeriodos] = useState(false);
+  const [mostrarModalMateriasAnteriores, setMostrarModalMateriasAnteriores] = useState(false);
+  const [periodoMinimoMarcado, setPeriodoMinimoMarcado] = useState(null);
+  const [materiasConcluidasAntesModal, setMateriasConcluidasAntesModal] = useState([]);
   const [materiaDetalhada, setMateriaDetalhada] = useState(null);
   const [mostrarFluxograma, setMostrarFluxograma] = useState(false);
   const [trilhaFiltroFluxograma, setTrilhaFiltroFluxograma] = useState(null);
@@ -1177,6 +526,57 @@ function SelecaoPeriodoMaterias() {
   function calcularPossiveisMaterias() {
     if (!periodoSelecionado) return;
 
+    // Sempre reseta os estados de confirmação antes de verificar
+    setPeriodoMinimoMarcado(null);
+    setMostrarConfirmacaoPeriodos(false);
+    setMostrarModalMateriasAnteriores(false);
+
+    // Usa as matérias concluídas antes da modal (se existir) para verificar,
+    // senão usa as matérias concluídas atuais
+    const materiasParaVerificar = materiasConcluidasAntesModal.length > 0 
+      ? materiasConcluidasAntesModal 
+      : materiasConcluidas;
+
+    // Verifica qual é o menor período que tem matérias marcadas
+    if (materiasParaVerificar.length > 0) {
+      const periodosMarcados = materiasParaVerificar.map(codigo => {
+        const materia = Object.values(TODAS_MATERIAS).find(m => m.codigo === codigo);
+        return materia ? parseInt(materia.periodo) : null;
+      }).filter(p => p !== null);
+
+      if (periodosMarcados.length > 0) {
+        const periodoMin = Math.min(...periodosMarcados);
+        
+        // Se o menor período marcado for maior que 1, mostra a confirmação
+        if (periodoMin > 1) {
+          setPeriodoMinimoMarcado(periodoMin);
+          setMostrarConfirmacaoPeriodos(true);
+          return;
+        }
+      }
+    }
+
+    // Se não precisa de confirmação, calcula diretamente
+    // Só limpa o estado de matérias antes da modal se realmente não precisar mais (quando período mínimo é 1)
+    if (materiasParaVerificar.length > 0) {
+      const periodosMarcados = materiasParaVerificar.map(codigo => {
+        const materia = Object.values(TODAS_MATERIAS).find(m => m.codigo === codigo);
+        return materia ? parseInt(materia.periodo) : null;
+      }).filter(p => p !== null);
+      if (periodosMarcados.length > 0) {
+        const periodoMin = Math.min(...periodosMarcados);
+        // Se o período mínimo é 1, limpa o estado salvo (não precisa mais)
+        if (periodoMin === 1) {
+          setMateriasConcluidasAntesModal([]);
+        }
+      }
+    }
+    executarCalculo();
+  }
+
+  function executarCalculo() {
+    if (!periodoSelecionado) return;
+
     let periodosConsiderados;
     if (materiasConcluidas.length === 0) {
       periodosConsiderados = ["1"];
@@ -1205,20 +605,57 @@ function SelecaoPeriodoMaterias() {
       return (b.horasSemanais || 0) - (a.horasSemanais || 0);
     });
 
-    const resultado = [];
-    const LIMITE_HORAS_SEMANAIS = 40;
-    let horasAcumuladas = 0;
+    setPossiveisMaterias(candidatas);
+    setMostrarModalPossiveis(true);
+  }
 
-    candidatas.forEach(m => {
-      const horasMateria = m.horasSemanais || 0;
-      if (horasAcumuladas + horasMateria <= LIMITE_HORAS_SEMANAIS) {
-        resultado.push(m);
-        horasAcumuladas += horasMateria;
+  function marcarTodasMateriasAnteriores() {
+    if (!periodoMinimoMarcado) return;
+
+    const materiasParaMarcar = [];
+    for (let i = 1; i < periodoMinimoMarcado; i++) {
+      const list = MATERIAS_POR_PERIODO[i.toString()] || [];
+      list.forEach(m => {
+        if (!materiasConcluidas.includes(m.codigo)) {
+          materiasParaMarcar.push(m.codigo);
+        }
+      });
+    }
+
+    setMateriasConcluidas(prev => [...prev, ...materiasParaMarcar]);
+    setMostrarConfirmacaoPeriodos(false);
+    setPeriodoMinimoMarcado(null);
+    executarCalculo();
+  }
+
+  function abrirModalMateriasAnteriores() {
+    let materiasParaSalvar = [...materiasConcluidas];
+    
+    // Se já existe estado salvo (não é a primeira vez), limpa as matérias dos períodos anteriores
+    if (materiasConcluidasAntesModal.length > 0 && periodoMinimoMarcado) {
+      const materiasParaLimpar = [];
+      for (let i = 1; i < periodoMinimoMarcado; i++) {
+        const list = MATERIAS_POR_PERIODO[i.toString()] || [];
+        list.forEach(m => {
+          if (materiasConcluidas.includes(m.codigo)) {
+            materiasParaLimpar.push(m.codigo);
+          }
+        });
       }
-    });
-
-    setPossiveisMaterias(resultado);
-    setMostrarModalPossiveis(true); // Abre a modal automaticamente após calcular
+      
+      // Remove as matérias dos períodos anteriores do estado que será salvo
+      if (materiasParaLimpar.length > 0) {
+        materiasParaSalvar = materiasConcluidas.filter(codigo => !materiasParaLimpar.includes(codigo));
+        // Atualiza o estado atual também
+        setMateriasConcluidas(materiasParaSalvar);
+      }
+    }
+    
+    // Salva o estado (já limpo se necessário) das matérias concluídas antes de abrir a modal
+    setMateriasConcluidasAntesModal(materiasParaSalvar);
+    
+    setMostrarConfirmacaoPeriodos(false);
+    setMostrarModalMateriasAnteriores(true);
   }
 
   const materiasFiltradas = materias.filter((m) => {
@@ -1895,6 +1332,167 @@ function SelecaoPeriodoMaterias() {
         )}
       </AnimatePresence>
 
+      {/* Modal de Confirmação de Períodos Anteriores */}
+      <AnimatePresence>
+        {mostrarConfirmacaoPeriodos && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => {
+              setMostrarConfirmacaoPeriodos(false);
+              setPeriodoMinimoMarcado(null);
+            }}
+            style={{ zIndex: 10007 }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
+              style={{ zIndex: 10008 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Confirmação
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Você já fez todas as matérias dos períodos anteriores?
+              </p>
+              <div className="flex gap-4">
+                <motion.button
+                  onClick={marcarTodasMateriasAnteriores}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Sim
+                </motion.button>
+                <motion.button
+                  onClick={abrirModalMateriasAnteriores}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Não
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Modal de Matérias dos Períodos Anteriores */}
+      <AnimatePresence>
+        {mostrarModalMateriasAnteriores && periodoMinimoMarcado && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 overflow-y-auto"
+            onClick={() => {
+              setMostrarModalMateriasAnteriores(false);
+              setPeriodoMinimoMarcado(null);
+            }}
+            style={{ zIndex: 10009 }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="bg-white rounded-3xl p-4 sm:p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-4"
+              style={{ zIndex: 10010 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                    Matérias dos Períodos Anteriores
+                  </h2>
+                  <p className="text-sm text-red-600 mt-2 font-medium">
+                    ⚠️ Marque as matérias que você cursou dos períodos anteriores para uma melhor sugestão
+                  </p>
+                </div>
+                <motion.button
+                  onClick={() => {
+                    setMostrarModalMateriasAnteriores(false);
+                    setPeriodoMinimoMarcado(null);
+                  }}
+                  className="text-gray-400 hover:text-gray-600 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all"
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  ×
+                </motion.button>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                {Array.from({ length: periodoMinimoMarcado - 1 }, (_, i) => i + 1).map(periodoNum => {
+                  const materiasDoPeriodo = MATERIAS_POR_PERIODO[periodoNum.toString()] || [];
+                  
+                  if (materiasDoPeriodo.length === 0) return null;
+
+                  return (
+                    <div key={periodoNum} className="border-2 border-gray-200 rounded-xl p-4">
+                      <h3 className="text-lg font-bold text-gray-700 mb-3">
+                        {periodoNum}º Período
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {materiasDoPeriodo.map(m => (
+                          <motion.div
+                            key={m.codigo}
+                            className={`p-3 rounded-lg border-2 cursor-pointer transition-all ${
+                              materiasConcluidas.includes(m.codigo)
+                                ? 'bg-green-50 border-green-400'
+                                : 'bg-white border-gray-200 hover:border-indigo-400'
+                            }`}
+                            onClick={() => toggleConcluida(m.codigo)}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <div className="flex items-center gap-2">
+                              <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${
+                                materiasConcluidas.includes(m.codigo)
+                                  ? 'bg-green-500 border-green-600'
+                                  : 'border-gray-300'
+                              }`}>
+                                {materiasConcluidas.includes(m.codigo) && (
+                                  <span className="text-white text-xs">✓</span>
+                                )}
+                              </div>
+                              <div className="flex-1">
+                                <p className="font-semibold text-sm text-gray-800">{m.nome}</p>
+                                <p className="text-xs text-gray-500">{m.codigo}</p>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <motion.button
+                onClick={() => {
+                  setMostrarModalMateriasAnteriores(false);
+                  setPeriodoMinimoMarcado(null);
+                  // NÃO limpa o estado de matérias antes da modal, para que na próxima vez ainda use esse estado
+                  // Executa o cálculo diretamente, sem verificar novamente (já passou pela confirmação)
+                  executarCalculo();
+                }}
+                className="w-full px-6 py-4 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white rounded-xl font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Calcular Possíveis Matérias
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Modal de Matérias Possíveis */}
       <AnimatePresence>
         {mostrarModalPossiveis && (
@@ -1903,7 +1501,11 @@ function SelecaoPeriodoMaterias() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
-            onClick={() => setMostrarModalPossiveis(false)}
+            onClick={() => {
+              setMostrarModalPossiveis(false);
+              setPeriodoMinimoMarcado(null);
+              setMostrarConfirmacaoPeriodos(false);
+            }}
             style={{ zIndex: 10001 }}
           >
             <motion.div
@@ -1926,11 +1528,15 @@ function SelecaoPeriodoMaterias() {
                     Matérias Possíveis
                   </motion.h2>
                   <p className="text-sm sm:text-base text-gray-600 mt-2">
-                    Matérias que você pode cursar respeitando pré-requisitos e limite de 40h semanais
+                    Matérias que você pode cursar respeitando pré-requisitos
                   </p>
                 </div>
                 <motion.button
-                  onClick={() => setMostrarModalPossiveis(false)}
+                  onClick={() => {
+                    setMostrarModalPossiveis(false);
+                    setPeriodoMinimoMarcado(null);
+                    setMostrarConfirmacaoPeriodos(false);
+                  }}
                   className="text-gray-400 hover:text-gray-600 text-3xl font-bold flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all"
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
@@ -2043,7 +1649,11 @@ function SelecaoPeriodoMaterias() {
               {/* Footer da Modal */}
               <div className="mt-6 pt-4 border-t border-gray-200 flex justify-end">
                 <motion.button
-                  onClick={() => setMostrarModalPossiveis(false)}
+                  onClick={() => {
+                    setMostrarModalPossiveis(false);
+                    setPeriodoMinimoMarcado(null);
+                    setMostrarConfirmacaoPeriodos(false);
+                  }}
                   className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-semibold shadow-lg transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
