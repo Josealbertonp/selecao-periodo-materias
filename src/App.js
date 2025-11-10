@@ -577,21 +577,54 @@ function SelecaoPeriodoMaterias() {
   function executarCalculo() {
     if (!periodoSelecionado) return;
 
+    console.log('[DEBUG executarCalculo] materiasConcluidas:', materiasConcluidas);
+
     let periodosConsiderados;
     if (materiasConcluidas.length === 0) {
       periodosConsiderados = ["1"];
     } else {
-      const idx = PERIODOS.findIndex((p) => p.id === periodoSelecionado);
-      periodosConsiderados = PERIODOS.slice(idx, idx + 3).map((p) => p.id);
+      // Encontra o menor período que tem matérias marcadas
+      const periodosMarcados = materiasConcluidas.map(codigo => {
+        const materia = Object.values(TODAS_MATERIAS).find(m => m.codigo === codigo);
+        return materia ? parseInt(materia.periodo) : null;
+      }).filter(p => p !== null);
+      
+      const periodoMinMarcado = periodosMarcados.length > 0 ? Math.min(...periodosMarcados) : 1;
+      const idxAtual = PERIODOS.findIndex((p) => p.id === periodoSelecionado);
+      
+      // Inclui períodos desde o menor período marcado até 3 períodos à frente do período selecionado
+      const periodoInicio = Math.min(periodoMinMarcado, parseInt(periodoSelecionado));
+      const idxInicio = PERIODOS.findIndex((p) => parseInt(p.id) === periodoInicio);
+      const idxFim = Math.min(idxAtual + 3, PERIODOS.length);
+      
+      periodosConsiderados = PERIODOS.slice(idxInicio, idxFim).map((p) => p.id);
     }
+
+    console.log('[DEBUG executarCalculo] periodosConsiderados:', periodosConsiderados);
 
     let candidatas = [];
     periodosConsiderados.forEach((pid) => {
       const list = MATERIAS_POR_PERIODO[pid] || [];
       const periodoInfo = PERIODOS.find((p) => p.id === pid);
       list.forEach((m) => {
-        const ok = m.prereq.every((pre) => materiasConcluidas.includes(pre));
-        if (ok && !materiasConcluidas.includes(m.codigo)) {
+        // Se não tem pré-requisitos, pode cursar
+        const prereqOk = m.prereq.length === 0 || m.prereq.every((pre) => materiasConcluidas.includes(pre));
+        const naoConcluida = !materiasConcluidas.includes(m.codigo);
+        
+        if (m.prereq.length > 0) {
+          const prereqFaltando = m.prereq.filter(pre => !materiasConcluidas.includes(pre));
+          console.log(`[DEBUG executarCalculo] Matéria ${m.codigo} (${m.nome}):`, {
+            prereq: m.prereq,
+            prereqFaltando: prereqFaltando,
+            prereqOk,
+            naoConcluida,
+            podeCursar: prereqOk && naoConcluida
+          });
+        } else {
+          console.log(`[DEBUG executarCalculo] Matéria ${m.codigo} (${m.nome}): SEM PRÉ-REQUISITOS, podeCursar:`, naoConcluida);
+        }
+        
+        if (prereqOk && naoConcluida) {
           candidatas.push({
             ...m,
             semestre: periodoInfo ? periodoInfo.label : pid
@@ -599,6 +632,9 @@ function SelecaoPeriodoMaterias() {
         }
       });
     });
+    
+    console.log('[DEBUG executarCalculo] Total de candidatas encontradas:', candidatas.length);
+    console.log('[DEBUG executarCalculo] Candidatas:', candidatas.map(c => `${c.codigo} - ${c.nome}`));
 
     candidatas.sort((a, b) => {
       if (a.periodo !== b.periodo) return a.periodo - b.periodo;
@@ -1385,27 +1421,22 @@ function SelecaoPeriodoMaterias() {
 
       {/* Modal de Matérias dos Períodos Anteriores */}
       <AnimatePresence>
-        {mostrarModalMateriasAnteriores && periodoMinimoMarcado && (
+        {mostrarModalMateriasAnteriores && periodoMinimoMarcado && periodoMinimoMarcado > 1 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 overflow-y-auto"
-            onClick={() => {
-              setMostrarModalMateriasAnteriores(false);
-              setPeriodoMinimoMarcado(null);
-            }}
-            style={{ zIndex: 10009 }}
+            style={{ zIndex: 10009, pointerEvents: 'none' }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               className="bg-white rounded-3xl p-4 sm:p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-4"
-              style={{ zIndex: 10010 }}
-              onClick={(e) => e.stopPropagation()}
+              style={{ zIndex: 10010, pointerEvents: 'auto' }}
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-4" onClick={(e) => e.stopPropagation()}>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
                     Matérias dos Períodos Anteriores
@@ -1427,18 +1458,18 @@ function SelecaoPeriodoMaterias() {
                 </motion.button>
               </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6" onClick={(e) => e.stopPropagation()}>
                 {Array.from({ length: periodoMinimoMarcado - 1 }, (_, i) => i + 1).map(periodoNum => {
                   const materiasDoPeriodo = MATERIAS_POR_PERIODO[periodoNum.toString()] || [];
                   
                   if (materiasDoPeriodo.length === 0) return null;
 
                   return (
-                    <div key={periodoNum} className="border-2 border-gray-200 rounded-xl p-4">
+                    <div key={periodoNum} className="border-2 border-gray-200 rounded-xl p-4" onClick={(e) => e.stopPropagation()}>
                       <h3 className="text-lg font-bold text-gray-700 mb-3">
                         {periodoNum}º Período
                       </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" onClick={(e) => e.stopPropagation()}>
                         {materiasDoPeriodo.map(m => (
                           <motion.div
                             key={m.codigo}
@@ -1447,7 +1478,15 @@ function SelecaoPeriodoMaterias() {
                                 ? 'bg-green-50 border-green-400'
                                 : 'bg-white border-gray-200 hover:border-indigo-400'
                             }`}
-                            onClick={() => toggleConcluida(m.codigo)}
+                            onMouseDown={(e) => {
+                              e.stopPropagation();
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              e.preventDefault();
+                              console.log('[DEBUG] Clicou na matéria:', m.codigo, m.nome);
+                              toggleConcluida(m.codigo);
+                            }}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                           >
@@ -1479,8 +1518,10 @@ function SelecaoPeriodoMaterias() {
                   setMostrarModalMateriasAnteriores(false);
                   setPeriodoMinimoMarcado(null);
                   // NÃO limpa o estado de matérias antes da modal, para que na próxima vez ainda use esse estado
-                  // Executa o cálculo diretamente, sem verificar novamente (já passou pela confirmação)
-                  executarCalculo();
+                  // Usa setTimeout para garantir que o estado foi atualizado antes de calcular
+                  setTimeout(() => {
+                    executarCalculo();
+                  }, 50);
                 }}
                 className="w-full px-6 py-4 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white rounded-xl font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
